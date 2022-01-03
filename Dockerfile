@@ -1,12 +1,14 @@
+# Use an official Python runtime as a parent image
 FROM python:3.10
 
-ADD Movie_picker.py .
+# Add contents into the container
+ADD App.py .
 
-RUN pip install requests beautifulsoup4
+# Install any needed packages
+RUN pip install flask
 
-CMD ["python", "./Movie_picker.py"]
-
-
+# Run app.py when the container launches
+CMD [ "python", "./App.py" ]
 
 
 
